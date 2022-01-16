@@ -6,26 +6,22 @@
 #         self.right = right
 class Solution:
     def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
-        self.list1 = []
-        self.list2 = []
+        self.state = True
+        def convertToList1(root1, root2):
+            if root1 and root2 and self.state:
+                if root1.val != root2.val:
+                    self.state=False
+                    return
+                else:
+                    convertToList1(root1.left, root2.left)
+                    convertToList1(root1.right, root2.right)
+            elif root1 or root2:
+                self.state = False
+            else:
+                pass
         
-        def convertToList1(root):
-            if root:
-                self.list1.append(root.val)
-                convertToList1(root.left)
-                convertToList1(root.right)
-            else:
-                self.list1.append(None)
                 
-        def convertToList2(root):
-            if root:
-                self.list2.append(root.val)
-                convertToList2(root.left)
-                convertToList2(root.right)
-            else:
-                self.list2.append(None)
-                
-        convertToList1(p)
-        convertToList2(q)
+       
+        convertToList1(p, q)
         #print(self.list1, self.list2)
-        return self.list1==self.list2
+        return self.state
