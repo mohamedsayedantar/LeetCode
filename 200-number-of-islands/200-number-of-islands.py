@@ -3,7 +3,6 @@ class Solution:
         self.rows = len(grid)-1
         self.columns = len(grid[0])-1
         self.count = 0
-        
         def find_island(i,j):
             if i>=0 and i<=self.rows and j>=0 and j<=self.columns:
                 if grid[i][j] == "1":
@@ -19,6 +18,4 @@ class Solution:
                     find_island(i, j)
                     self.count += 1
                     
-        #print(self.count)
-        #print(grid)
         return self.count
