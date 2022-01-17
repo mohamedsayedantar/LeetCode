@@ -5,7 +5,6 @@ class Solution:
         """
         self.rows = len(board)-1
         self.columns = len(board[0])-1
-        #print(self.rows, self.columns)
         def find_O(i,j):
             if i>=0 and i<=self.rows and j>=0 and j<=self.columns: 
                 if board[i][j]=="O":
@@ -38,9 +37,6 @@ class Solution:
                     
         for i in range(self.rows+1):
             for j in range(self.columns+1):
-                #print(i, j)
                 if board[i][j]=="T":
                     board[i][j] = "O"
-                    #print("kkkkkkkkkkkkkkk")
         
-        #print(board)
