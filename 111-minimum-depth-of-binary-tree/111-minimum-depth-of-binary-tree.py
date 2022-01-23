@@ -6,7 +6,7 @@
 #         self.right = right
 class Solution:
     def minDepth(self, root: Optional[TreeNode]) -> int:
-        self.depth = -1
+        self.depth = 1000001
         if not root:
             return 0
         def cal_dep(node, d):
@@ -15,11 +15,8 @@ class Solution:
                     cal_dep(node.left, d+1)
                     cal_dep(node.right, d+1)
                 else:
-                    if self.depth == -1:
+                    if d<self.depth:
                         self.depth = d
-                    else:
-                        if d<self.depth:
-                            self.depth = d
             
         cal_dep(root, 1)
         return self.depth
