@@ -5,7 +5,9 @@ class Solution:
         for i in range(len(prices)):
             if prices[i] < lowest:
                 lowest = prices[i]
-            if prices[i]-lowest> diff:
+            elif prices[i]-lowest> diff:
                 diff = prices[i]-lowest
+            else:
+                pass
                     
         return diff
