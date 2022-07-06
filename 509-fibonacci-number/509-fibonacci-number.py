@@ -1,5 +1,6 @@
 class Solution:
     def fib(self, n: int) -> int:
+        """
         def fibo(n):
             if n == 0:
                 return 0
@@ -9,3 +10,8 @@ class Solution:
                 return fibo(n-1) + fibo(n-2)
             
         return fibo(n)
+        """
+        a,b = 0,1
+        for _ in range(n):
+            a, b = b, a+b
+        return a
