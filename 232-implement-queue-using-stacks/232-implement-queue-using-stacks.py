@@ -18,4 +18,3 @@ class MyQueue:
 
     def empty(self):
         return not self.s1 and not self.s2
-       
