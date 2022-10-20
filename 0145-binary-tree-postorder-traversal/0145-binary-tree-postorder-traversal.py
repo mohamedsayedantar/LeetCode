@@ -7,11 +7,11 @@
 class Solution:
     def postorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         out_list = []
-        def get_inorder(root):
+        def get_postorder(root):
             if root:
-                get_inorder(root.left)
-                get_inorder(root.right)
+                get_postorder(root.left)
+                get_postorder(root.right)
                 out_list.append(root.val)
                 
-        get_inorder(root)
+        get_postorder(root)
         return out_list
