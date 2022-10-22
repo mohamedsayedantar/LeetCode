@@ -8,7 +8,7 @@ class Solution:
     def searchBST(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
         self.output = None 
         def get_n(node, value):
-            if node:
+            if node and not self.output:
                 if node.val == value:
                     self.output = node
                 else:
